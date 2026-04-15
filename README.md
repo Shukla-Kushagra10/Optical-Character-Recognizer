@@ -76,9 +76,3 @@ Code
 - Add support for multiple digits at once
 - Improve accuracy with convolutional neural networks (CNNs)
 - Deploy as a web service with real-time feedback
-
----
-
-## 📜 License
-This project is licensed under the MIT License.  
-Feel free to use, modify, and distribute.
