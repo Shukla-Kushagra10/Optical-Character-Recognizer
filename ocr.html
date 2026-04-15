@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OCR Neural Network</title>
+    <script src="ocr.js"></script>
+    <style>
+        /* Basic styling since you're running locally */
+        #main-container {
+            margin-top: 50px;
+            font-family: Arial, sans-serif;
+        }
+        #canvas {
+            border: 2px solid #333;
+            background-color: #eee; /* Light grey so you can see the white/black pixels */
+            cursor: crosshair;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 40px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        input[type="button"] {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body onload="ocrDemo.onLoadFunction()">
+    <div id="main-container" style="text-align: center;">
+        <h1>OCR Neural Network Demo</h1>
+        <p>Draw a digit (0-9) in the box below:</p>
+        
+        <canvas id="canvas" width="200" height="200"></canvas>
+        
+        <form name="input" onsubmit="return false;">
+            <p>
+                <strong>Label for Training:</strong> 
+                <input id="digit" type="text" maxlength="1" placeholder="?">
+            </p>
+            
+            <input type="button" value="Train" onclick="ocrDemo.train()">
+            <input type="button" value="Test" onclick="ocrDemo.test()">
+            <input type="button" value="Reset Canvas" onclick="ocrDemo.resetCanvas()" />
+        </form>
+        
+        <div style="margin-top: 20px; color: #666; font-size: 0.9em;">
+            <p>Note: You must train 10 samples before the data is sent to the server.</p>
+        </div>
+    </div>
+</body>
+</html>
